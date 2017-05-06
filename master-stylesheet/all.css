@@ -1,0 +1,345 @@
+@charset 'utf-8';
+/* MASTER RESET */
+/*
+by Misti Wolanski
+http://mistiwolanski.com
+strips settings and explicitly defines defaults
+
+Draws from my own experience over the past decade and…
+  • normalize.css - https://necolas.github.io/normalize.css/
+  • reset.css - http://meyerweb.com/eric/tools/css/reset/
+  • http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
+
+*/
+
+@media all {
+:root {
+  font-family: Verdana, sans-serif;
+  text-align: justify;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.2;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  scroll-behavior: smooth; /* this feature is in development */
+  margin: 0;
+  padding: 0;
+
+  /* Prevent font size adjustments after orientation changes on Windows & Apple phones */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  }
+*, *:before, *:after {
+  box-sizing: inherit;
+  }
+html {
+  display: block;
+  }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  }
+
+nav li, nav ol, nav ul, nav a {
+  list-style: none inside;
+  margin: 0;
+  padding: 0;
+  }
+button, input, keygen, optgroup, select, textarea {
+  margin: 0;
+  }
+input, textarea, keygen, select, button {
+  font-size: 1em;
+  }
+header, hgroup, main, footer,
+article, aside, nav, section,
+figure, figcaption, form,
+dialog, object {
+  display: block;
+  }
+audio, canvas, video, img {
+  display: inline-block;
+  }
+  audio:not([controls]) {
+    /* fix for iOS 4-7 */
+    display: none;
+    height: 0;
+    }
+
+em em, em i, i em, i i, u {
+  text-decoration: underline;
+  }
+
+figure { /* margin fix for Opera */
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  }
+figure img {
+  display: block;
+  margin: 0 auto;
+  }
+figure, iframe, img {
+  height: auto;
+  max-width: 100%;
+  }
+audio:not([controls]) {
+  display: none;
+  height: 0;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  font-size: inherit;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  }
+p, li {
+   -ms-hyphens: auto;
+   hyphens: auto;
+  }
+del, ins, s {
+  display: inline;
+  }
+hr {
+  box-sizing: content-box;
+  margin: 1.25em auto;
+  height: 0;
+  overflow: visible;
+  }
+a {
+  /* fix for underline gaps iOS ≥8 & Safari ≥8. */
+    -webkit-text-decoration-skip: objects;
+  }
+a, span {
+  background: none;
+  font-size: inherit;
+  font-weight: inherit;
+  }
+a, a:active, a:hover, span {
+  outline: 0;
+  }
+a:active, a:hover, a:link, a:visited {
+  text-decoration: none;
+  }
+a img, a:active img, a:hover img, a:link img, a:visited img {
+  border: none;
+  }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: auto;
+  margin: 0 auto;
+  }
+label, output, th {
+  font-weight: bold;
+  }
+
+cite, embed, img, mark, nav a, select, textarea {
+  display: inline-block;
+  }
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+input[type=text], input[type=email], input[type=number],
+textarea, fieldset {
+  -webkit-appearance: none;
+  }
+textarea {
+  overflow: auto;
+  }
+button, [type=button],
+[type=reset], [type=submit] {
+  -webkit-appearance: button;
+  }
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+  display: inline-block;
+  }
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  /* fix cursor style for increment & decrement buttons in Chrome. */
+    height: auto;
+  }
+[type=search] {
+  /* fix for Chrome & Safari */
+    -webkit-appearance: textfield;
+  /* fix for Safari */
+    outline-offset: -2px;
+  }
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
+  /* fix inner padding and cancel buttons in Chrome and Safari on macOS */
+  -webkit-appearance: none;
+  }
+
+::-webkit-file-upload-button {
+  /* fix for iOS and Safari */
+    -webkit-appearance: button;
+  }
+
+
+:focus {
+  box-shadow: none;
+  outline: 0;
+  }
+button, input, select, textarea {
+  font-family: inherit;
+  line-height: 1;
+  }
+  button, input {
+    overflow: visible;
+    }
+  button, select {
+    text-transform: none;
+    }
+
+/* some Firefox fixes */
+  ::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+    }
+  :-moz-focusring {
+    outline: 1px dotted ButtonText;
+    }
+
+nav ol, nav ul {
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  }
+nav li {
+  width: auto;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  }
+  nav li a {
+    width: inherit;
+    }
+nav a :not(img) {
+  margin: 0;
+  padding: .2em .5rem;
+  }
+address {
+  font-style: normal;
+  }
+[hidden], template {
+  display: none;
+  }
+del, s {
+  text-decoration: line-through;
+  }
+ins {
+  font-size: 1.1em;
+  font-variant: small-caps;
+  }
+ins:before {
+  content: '[';
+  }
+ins:after {
+  content: ']';
+  }
+del[cite]:after, ins[cite]:after {
+  content: " (" attr(cite) ")]";
+  font-variant: normal;
+  font-size: .9em;
+  }
+abbr, acronym {
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
+  }
+abbr[title] {
+  /* fix Firefox ≤39 */
+  border-bottom: none;
+  /* fix text decoration in Chrome, Edge, IE, Opera, & Safari */
+    text-decoration: underline;
+    text-decoration: underline dotted;
+  }
+code, kdb, pre, samp {
+  font: 1em 'Courier New', 'New Courier', monospace;
+  }
+dfn {
+  font-style: italic;
+  }
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+  }
+
+sub, sup {
+  font-size: .75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  }
+  sup {
+    top: -.5em;
+    }
+  sub {
+    bottom: -.25em;
+    }
+
+small {
+  font-size: .8em;
+  }
+big {
+  font-size: 1.2em;
+  }
+
+blockquote, q {
+  quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+    }
+
+summary {
+  display: list-item;
+  }
+} /* / @media all */
+
+@media (max-width: 1000px) { /* FOR TABLET & NETBOOK */
+:root {
+  font-size: 18px;
+  }
+} /* end @media (max-width: 1000px) FOR TABLET & NETBOOK */
+
+@media (max-width: 500px) { /* FOR PHONES */
+:root {
+  font-size: 16px;
+  }
+} /* end @media (max-width: 500px) FOR PHONES */
+
+
+@media (min-width: 1600px) { /* FOR EXTRA-BIG SCREENS */
+:root {
+  font-size: 24px;
+  }
+} /* end @media (min-width: 1600px) FOR EXTRA-BIG SCREENS */
