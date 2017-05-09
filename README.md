@@ -15,7 +15,6 @@ The parts of the reset specific to printed documents. (Or, in some setups, savin
 CSS postprocessor, written in PHP.
 
 ### composite-processor.php
-**version: 0.01**
 A CSS postprocessor (written in PHP) that lets you code in individual files and will compile a single "style.css" file for you. **This is designed for install in your CSS directory.**
 
 TO USE:
