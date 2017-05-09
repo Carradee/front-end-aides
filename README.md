@@ -11,13 +11,18 @@ The parts of the reset that focus on all types of screens.
 ### print.css
 The parts of the reset specific to printed documents. (Or, in some setups, saving as PDF.)
 
-## melkor
+## css-post-processors
+CSS postprocessor, written in PHP.
+
+### composite-processor.php
 **version: 0.01**
+A CSS postprocessor (written in PHP) that lets you code in individual files and will compile a single "style.css" file for you. **This is designed for install in your CSS directory.**
 
-### css-postprocessor
-A CSS postprocessor (written in PHP) that lets you code in individual files and will compile a single "style.css" file for you. **If style.css exists, it will be overwritten.**
+TO USE:
+* Number your CSS files in the order you want them to cascade. (I have a recommendation for this, but it's part of a bigger file-handling method that is in process.)
+* Add to your css folder and run the script. Style.css will be generated, for use in your site.
 
-As it is now, it will scan the directory it's in and will auto-compile a list of all CSS files (except for "style.css"). **This means you must number your CSS files so they cascade properly.**
+**If style.css exists, it will be overwritten.**
 
 ## more features and such in the works
 
