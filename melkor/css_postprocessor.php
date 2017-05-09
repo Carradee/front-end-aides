@@ -1,6 +1,10 @@
 <?php
 /*
+Melkor CSS Postprocessor
+v. 0.01
+
 Compile all CSS files and overwrite style.css if it differs from source files.
+
 Misti Wolanski
 Carradee @ GitHub
 http://github.com/Carradee
