@@ -20,7 +20,7 @@ if (isset($css_content)) {
 }
 
 // get $css_content
-function CSS_setup() {
+function CSS_from_scanned_directory() {
 	$dir = dirname(__FILE__);
 	$file_list = scandir($dir);
 	$expression_search = array(
@@ -40,8 +40,23 @@ function CSS_setup() {
 	} // end foreach
 	$file_content = implode("\r\n", $file_content);
 	return $file_content;
-} // end function CSS_setup
-$css_content = CSS_setup();
+} // end function CSS_from_scanned_directory
+
+function CSS_from_manual_setup() {
+	$file_content = array( // change the "file_get_contents" to manually select the various files you want to use.
+		file_get_contents('example-style.css'),
+		file_get_contents('example-style2.css'),
+		file_get_contents('../css/example-style3.css'),
+	); // end $css_content
+	$file_content = implode("\r\n", $file_content);
+	return $file_content;
+} // end function CSS_from_manual_setup
+
+/* set which method you want to use:
+   - CSS_from_scanned_directory - to get files from a specific directory (by default, the one the script's in)
+   - CSS_from_manual_setup - where you tell which specific files you want used
+*/
+$css_content = CSS_from_scanned_directory();
 
 function CSS_minify($var) {
 	// set up & run regex search
