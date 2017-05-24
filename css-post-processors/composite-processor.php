@@ -1,7 +1,7 @@
 <?php
 /*
 Melkor CSS Postprocessor
-v. 0.01
+v. 0.02
 
 Compile all CSS files and overwrite style.css if it differs from source files.
 
