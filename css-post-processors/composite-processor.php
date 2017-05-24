@@ -55,7 +55,11 @@ function CSS_minify($var) {
 		array("needle" => "@(\*\/)@", "straw" => "$1\n"),
 		array("needle" => "@\/\*.*\*\/\n@", "straw" => ""),
 		array("needle" => "@ *([;{},:]) +@", "straw" => "$1"),
-		array("needle" => "@(\@media)@", "straw" => " $1"),
+		array("needle" => "@ *(\@media)@", "straw" => "\n$1"),
+		array("needle" => "@(}).*{}\n@", "straw" => "$1"),
+		array("needle" => "@.*{}\n@", "straw" => "\n"),
+		array("needle" => "/@media (.*?){}/", "straw" => ""),
+		array("needle" => "@\n\n+@", "straw" => "\n"),
 	);
 	foreach ($expression_search as $row) {
 		$var = preg_replace( $row['needle'], $row['straw'], $var );
