@@ -1,0 +1,586 @@
+@charset 'utf-8';
+
+/* MORGOTH */
+/* A DEFAULT SETUP */
+/*
+by Misti Wolanski
+http://mistiwolanski.com
+https://carradee.github.io
+
+This is a setup of tag defaults that works in conjunction with Melkor. Install after.
+
+NOTE:
+  • You will (and should) adjust this for your project needs. To that end, I've included
+  some notes.
+  • Watch for "OPTION" flags. They offer code already set up for what you want.
+  • There are two options for <body> defaults: 1 stretches the header - body - footer
+    for the height of the page. The other makes everything hang out in the center.
+    Uses flexbox.
+*/
+
+
+/* GENERAL TAG SETTINGS
+-------------------------------------------------------------- */
+@media all {
+
+:root {
+  font-size: 20px;  
+  font-family: Verdana, sans-serif;
+  text-align: justify;  
+  line-height: 1.2;  
+  }
+* {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  }
+
+/* OPTION */
+/* auto-set things so the whole site hangs out in the center. */
+body {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  }
+
+/* OPTION */
+/* auto-set things in the usual top-body-bottom spread. */
+body {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  }
+  body > :first-child {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+  body > :last-child {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    }
+
+/* perfect 4th: http://type-scale.com */
+h1 { font-size: 3.157rem; }
+h2 { font-size: 2.369rem; }
+h3 { font-size: 1.777rem; }
+h4 { font-size: 1.333rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.75rem; }
+
+p {
+  text-align: justify;
+  }
+  p:not(:first-of-type) {
+    margin: .8em 0 0 0;
+    }
+
+a {
+  text-decoration: none;
+  }
+a:hover {
+  text-decoration: none;
+  cursor: hand;
+  cursor: pointer; 
+  }
+a :not(img) {
+  /* any setting you want specific to linked text */
+  }
+a img, a:link img, a:visited img {
+  -webkit-box-shadow: 0 0 .8em 0 #ddd;
+          box-shadow: 0 0 .8em 0 #ddd;
+  border: 1px solid #ddd;
+  }
+a:hover img {
+  -webkit-box-shadow: 0 0 .8em 0 #aaa;
+          box-shadow: 0 0 .8em 0 #aaa;
+  border: 1px solid #aaa;
+  }
+a:active img {
+  -webkit-box-shadow: 0 0 .8em 0 #888;
+          box-shadow: 0 0 .8em 0 #888;
+  border: 1px solid #888;
+  }
+
+nav li, nav ol, nav ul, nav a {
+  list-style: none outside;
+  margin: 0;
+  padding: 0;
+  }
+nav li {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  display: inline; /* for horizontal menus */
+  }
+nav li a {
+  width: inherit;
+  }
+nav a :not(img) {
+  margin: 0;
+  padding: .2em .5rem;
+  }
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: .25em .75em;
+  }
+  nav a:hover {
+    text-decoration: none;
+    }
+
+h1 {
+  font-weight: normal;
+  line-height: 1;
+  }
+h2 {
+  clear: both;
+  padding: 0;
+  line-height: 1;
+  font-weight: bold;
+  }
+h2:not(:first-child) {
+  margin-top: 1em;
+}
+h3 {
+  margin: 1em 0 0 0;
+  }
+h4 {
+  margin: 1rem 0;
+  text-align: left;
+  }
+h5 {
+  margin: 1rem 0 0;
+  }
+h6 {
+  margin: 1rem 0;
+  }
+
+img {
+  display: block;
+  margin: 0 auto;
+  }
+
+code, kdb, pre, samp {
+  font-family: 'Courier New', 'New Courier', monospace;  
+  }
+
+/* OPTION */
+/* for dark background */
+:focus {
+  outline: #ddd;
+  -webkit-box-shadow: 0 0 .2rem 0 #fff;
+          box-shadow: 0 0 .2rem 0 #fff;
+}
+/* OPTION */
+/* for light background */
+:focus {
+  outline: #333;
+  -webkit-box-shadow: 0 0 .2rem 0 #000;
+          box-shadow: 0 0 .2rem 0 #000;
+}
+
+dl {
+  margin: .8rem 0;
+  }
+dt {
+  font-weight: bold;
+  }
+  dt:not(:first-child) {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ddd;
+    }
+dd {
+  margin: .6em 1.4em;
+  }
+ul, ol {
+  display: block;
+  list-style-position: inside;
+  margin: .8rem 0 .8rem 1.5rem;
+  padding: 0;
+  }
+li {
+  text-align: left;
+  }
+ul ul, ol ol, ol ul, ul ol {
+  margin: .2em 0 .2em 1.5em;
+  }
+  ul { list-style: disc; }
+  ul ul { list-style-type: circle; }
+  ul ul ul { list-style-type: square; }
+  ol { list-style: decimal; }
+  ol ol { list-style-type: lower-latin; }
+  ol ol ol { list-style-type: lower-roman; }
+  li:not(:first-child),
+  dt:not(:first-child) {
+    margin-top: .8em;
+    }
+
+form {
+  max-width: 36rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem auto;
+  padding: .5rem;
+  }
+legend {
+  font-size: .9em;
+  text-align: center;
+  }
+label {
+  margin: 0 .5rem 0 0;
+  }
+input,
+textarea {
+  display: block;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  margin: 1rem auto;
+  padding: .25em;
+  }
+  textarea {
+    min-height: 5em;
+    overflow: auto;
+    }
+  input:focus,
+  textarea:focus {
+    background: #f5f5f5;
+    border-color: #333;
+    }
+  button,
+  input[type=submit] {
+    font-size: 1.1em;
+    display: block;
+    margin: 1 auto;
+    width: auto;
+    border: none;
+    padding: .3em .5em;
+    font-weight: bold;
+    border-radius: 1em;
+    }
+  button, input[type=button], input[type=submit] {
+    cursor: pointer;
+    cursor: hand;
+    }
+input[type=search] {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  }
+form > div {
+  margin: .5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  }
+  form > div > label {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    min-width: 9rem;
+    text-align: right;
+    }
+  form > div > input,
+  form > div > textarea {
+    -webkit-box-flex: 2;
+        -ms-flex: 2 1 auto;
+            flex: 2 1 auto;
+    max-width: 27rem;
+    }
+
+hr {
+  margin: 1.25em auto;
+  }
+
+blockquote {
+  margin: 1rem 2rem;
+  padding: .5rem;
+  border-left: .3em solid #ddd;
+  }
+blockquote p {
+  margin-bottom: 0;
+  }
+blockquote cite {
+  display: block;
+  margin-left: 1em;
+  text-align: left;
+  }
+  blockquote cite::before {
+    content: "—";
+    }
+
+figure,
+iframe {
+  margin: 1em auto;
+  display: block;
+  }
+
+figure {
+  }
+figure img {
+  display: block;
+  margin: 0 auto;
+  }
+figure figcaption {
+  font-size: .85em;
+  margin-top: .75em;
+  text-align: center;
+  }
+
+/* structural elements */
+header {
+  text-align: center;
+  }
+main {
+  line-height: 1.4;
+  }
+aside {
+  padding: 1em;
+  border: 0 2px solid #ddd;
+  }
+  aside ul li {
+    margin: 0;
+    }
+article,
+:not(article) section {
+  margin: 1rem 0;
+  }
+footer {
+  font-size: .8rem;
+  }
+
+menu {
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-weight: bold;
+  }
+  menu a {
+    font-weight: bold;
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+    }
+  menu a:hover {
+    }
+  menu a span {
+    display: block;
+    font-weight: normal;
+    }
+
+details {
+  margin: 1rem auto;
+  }
+summary {
+  font-weight: bold;
+  }
+
+
+table {
+  margin: .8rem auto;
+  padding: .2rem 2rem;
+  font-size: .9em;
+  line-height: 1.1;
+  border-collapse: collapse;
+  }
+  h2 + table, h3 + table, h4 + table {
+    margin-top: 0;
+    }
+table caption {
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  }
+tr {
+  margin: .4em;
+  border: 1px solid #ddd;
+  }
+tr :only-child  {
+  text-align: center;
+  }
+th,td {
+  padding: .25em;
+  margin: .2em;
+  }
+th {
+  font-weight: bold;
+  }
+td {
+  text-align: justify;
+  }
+  td > ul,
+  td > ol,
+  td li {
+    margin: 0;
+    padding: 0;
+    }
+  td ul,
+  td ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+  td p:first-child {
+    margin: 0;
+  }
+  td li:not(:first-child) {
+    margin-top: 0;
+    }
+  td form {
+    margin: 0;
+    }
+
+thead {
+  }
+tbody {
+  }
+  tbody tr {
+    text-align: right;
+    }
+  tbody th {
+    vertical-align: text-top;
+    text-align: right;
+    }
+tfoot {
+  font-size: .85em
+  }
+
+del {
+  position: relative;
+  display: inline-block;
+  }
+  del:before {
+    content: '';
+    border-bottom: 3px solid #666;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: skewY(10deg);
+            transform: skewY(10deg);
+   }
+
+} /* end @media all */
+
+
+@media (min-width: 1600px) { /* FOR EXTRA-BIG SCREENS */
+:root {
+  font-size: 24px;
+  }
+/* OPTION */
+/* convert content to columns on extra-wide screens, for easier legibility */
+main {
+  -webkit-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 2rem;
+  column-gap: 2rem;
+  }
+article {
+  -webkit-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 1rem;
+  column-gap: 1rem;
+  }
+
+} /* end @media (min-width: 1600px) FOR EXTRA-BIG SCREENS */
+
+@media (max-width: 900px) { /* FOR TABLET & NETBOOK */
+
+:root {
+  font-size: 18px;
+  }
+
+figure {
+  max-width: 50%;
+  }
+
+} /* end @media (max-width: 900px) FOR TABLET & NETBOOK */
+
+
+@media (max-width: 450px) { /* FOR MOBILE */
+:root {
+  font-size: 16px;
+  }
+tr {
+  margin-bottom: .8em;
+  display: block;
+  }
+td {
+  display: inline;
+  }
+
+figure {
+  max-width: 100%;
+  }
+
+article {
+  margin-bottom: 1rem;
+  }
+section {
+  margin-bottom: .5rem;
+  }
+
+} /* end @media (max-width: 450px) FOR MOBILE */
+
+@media screen,handheld {
+
+/* PUT ITEMS THAT SHOULD NOT AFFECT SITE-TO-SPEECH READERS HERE. */
+
+article > p:first-of-type:first-letter { /* drop cap! */
+  vertical-align: text-top;
+  font-size: 3.157rem; /* same size as h1 above */
+  color: #666;
+  text-shadow: 1px 1px #111;
+  line-height: .5;
+  margin: .28em 0 0;
+  float: left;
+  }
+
+} /* end @media screen,handheld */

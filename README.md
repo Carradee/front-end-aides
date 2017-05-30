@@ -5,11 +5,11 @@ make CSS easier to use
 **version: 0.01**
 A master stylesheet project, intended to normalize site appearance across browsers.
 
-### all.css
-The parts of the reset that focus on all types of screens.
+### -melkor-reset.css
+This is the reset file. Should work fine just with install—but some of the things it overrides or converts to default can cause problems on some setups. (Ex. `:focus` is overridden.) *This includes setup for printed pages.*
 
-### print.css
-The parts of the reset specific to printed documents. (Or, in some setups, saving as PDF.)
+### -morgoth-defaults.css
+This is the the tag default stylesheet made to go with *melkor-reset.css*. Adjust as warranted to suit your project. Includes some options.
 
 ## css-post-processors
 CSS postprocessor, written in PHP.
