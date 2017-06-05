@@ -27,7 +27,7 @@ NOTE:
   height: 100%;
   width: 100%;
   max-width: 100%;
-  scroll-behavior: auto; /* this feature is in development */
+  scroll-behavior: smooth; /* this feature is in development */
   margin: 0;
   padding: 0;
 

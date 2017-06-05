@@ -28,15 +28,14 @@ NOTE:
   font-family: Verdana, sans-serif;
   text-align: justify;  
   line-height: 1.2;  
-  }
-* {
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
   }
 
 /* OPTION */
 /* auto-set things so the whole site hangs out in the center. */
 body {
+	display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -54,6 +53,7 @@ body {
 /* OPTION */
 /* auto-set things in the usual top-body-bottom spread. */
 body {
+	display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -147,17 +147,14 @@ nav a {
 
 h1 {
   font-weight: normal;
-  line-height: 1;
   }
 h2 {
   clear: both;
   padding: 0;
-  line-height: 1;
-  font-weight: bold;
   }
 h2:not(:first-child) {
   margin-top: 1em;
-}
+	}
 h3 {
   margin: 1em 0 0 0;
   }
@@ -234,7 +231,7 @@ ul ul, ol ol, ol ul, ul ol {
     }
 
 form {
-  max-width: 36rem;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -280,6 +277,8 @@ textarea {
     font-weight: bold;
     border-radius: 1em;
     }
+	input[type=checkbox],
+	input[type=radio],
   button, input[type=button], input[type=submit] {
     cursor: pointer;
     cursor: hand;
@@ -288,6 +287,9 @@ input[type=search] {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   }
+  
+
+/* can help make a nice contact form
 form > div {
   margin: .5rem 0;
   display: -webkit-box;
@@ -320,6 +322,7 @@ form > div {
             flex: 2 1 auto;
     max-width: 27rem;
     }
+*/
 
 hr {
   margin: 1.25em auto;
@@ -516,17 +519,11 @@ del {
   }
 /* OPTION */
 /* convert content to columns on extra-wide screens, for easier legibility */
-main {
+article section {
   -webkit-column-count: 2;
   column-count: 2;
   -webkit-column-gap: 2rem;
   column-gap: 2rem;
-  }
-article {
-  -webkit-column-count: 2;
-  column-count: 2;
-  -webkit-column-gap: 1rem;
-  column-gap: 1rem;
   }
 
 } /* end @media (min-width: 1600px) FOR EXTRA-BIG SCREENS */
@@ -573,14 +570,17 @@ section {
 
 /* PUT ITEMS THAT SHOULD NOT AFFECT SITE-TO-SPEECH READERS HERE. */
 
+section > h2 + p:first-of-type:first-letter,
+section > h3 + p:first-of-type:first-letter,
 article > p:first-of-type:first-letter { /* drop cap! */
   vertical-align: text-top;
   font-size: 3.157rem; /* same size as h1 above */
   color: #666;
   text-shadow: 1px 1px #111;
   line-height: .5;
-  margin: .28em 0 0;
+  margin: .45rem 0 0;
   float: left;
+  font-family: 'Times New Roman', serif;
   }
 
 } /* end @media screen,handheld */
