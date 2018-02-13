@@ -1,7 +1,15 @@
-# CSS stuff
-make CSS easier to use
+# Front-End Code
 
-**THESE ITEMS ARE A BIT OUT-OF-DATE.** On my end, I've made revisions, but I've not yet prepped those in a releasable way. These can still be useful or helpful, though.
+**THESE ITEMS ARE A BIT OUT-OF-DATE.** On my end, I've made revisions, but I've not yet prepped those in a releasable way.
+
+This repository includes:
+
+* a master stylesheet
+* CSS post processor
+
+To come:
+
+* a JS & CSS polyfill for the HTML5 `<dialog>` tag
 
 ## master-stylesheet
 **version: 0.01**
