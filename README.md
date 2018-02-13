@@ -5,6 +5,8 @@ make CSS easier to use
 **version: 0.01**
 A master stylesheet project, intended to normalize site appearance across browsers.
 
+**NEEDS UPDATING.** These are currently helpful starting points. I have made updates on my end, but they're not prepped for release yet.
+
 ### -melkor-reset.css
 This is the reset file. Should work fine just with install—but some of the things it overrides or converts to default can cause problems on some setups. (Ex. `:focus` is overridden.) *This includes setup for printed pages.*
 
