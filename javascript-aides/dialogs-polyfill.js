@@ -1,6 +1,6 @@
 // ====================================
 // dialogs-polyfill.js
-// Use the dialog element—easily!
+// Use the dialog element easily!
 // ====================================
 // created in February 2018 by Misti Wolanski | http://mistiwolanski.com
 // =======================================
@@ -82,14 +82,14 @@
 	 	  - String.prototype.includes
 
 	 * set_up_dialog_element() - runs the polyfill
-	——— support functions (can be useful elsewhere)
+	 ‚Äî support functions (can be useful elsewhere)
 	 * add_class(element, class_names)
 	 * remove_class(element, class_names)
 	 * set_attr(element, attributes, value = null)
 	 * create(element, name_space = '')
 	 * get_em(parent = '') - get item size; if empty, get default font size
 	 * svg_x(parent) - creates a "x" drawn via SVG and placed in parent
-	——— associated functions (required parts of set_up_dialog_element())
+	 ‚Äî associated functions (required parts of set_up_dialog_element())
 	 * dialog_listener()
 	 * dialog_open_check(dialog)
 	 * dialog_length_check(dialog)
@@ -129,12 +129,12 @@
 			dialog_css(); // inject CSS in page, if necessary
 			document.addEventListener('keydown', dialog_listener, false);
 
-			// for each `<dialog>`in page…
+			// for each `<dialog>`in page√â
 			// dialogs.forEach(function(dialog){});
 			for ( var i = 0; i < dialogs.length; i++) {
 				var dialog = dialogs[i];
 
-				// make sure all dialogs…
+				// make sure all dialogs√â
 				dialog_html(dialog);  // inject HTML so it displays properly
 				dialog_length_check(dialog); // add class adjustment for long dialog boxes
 				dialog_open_check(dialog);   // test if a dialog is open already
@@ -210,7 +210,7 @@
 		var value = value || null; // default parameter, IE compatible
 		if ((value !== null) && (typeof attributes == 'string')) { // if 3 values are passed
 			element.setAttribute(attributes, value);
-		} else { // if a multidimensional array is passed…
+		} else { // if a multidimensional array is passed√â
 			if (typeof attributes == 'string') { attributes = [attributes]; }
 			for (var key in attributes) {
 				element.setAttribute(key, attributes[key]);
@@ -296,7 +296,7 @@
 		var id;
 
 		// if click
-		if ( event.type === "click" ) { // if clicked… get associated dialog
+		if ( event.type === "click" ) { // if clicked√â get associated dialog
 			var a = event.target || event.srcElement;
 			if (a.tagName != 'A'){ a = a.parentElement; }
 			var custom_attr = "data-dialog";
@@ -305,7 +305,7 @@
 		} // if ( event.type === "click" )
 
 		// if key command
-		if ( event.type === "keydown" ) { // if key pressed… get open dialog
+		if ( event.type === "keydown" ) { // if key pressed√â get open dialog
 			if ( (event.keyCode == '27') || (event.keyCode == '32') ) { // if esc or space
 				run = true;
 			} // if
@@ -322,7 +322,7 @@
 			} // for loop for all dialogs in document
 		} // if (dialog === null)
 
-		if (dialog !== null && run == true) { // if dialog variable has been set…
+		if (dialog !== null && run == true) { // if dialog variable has been set√â
 			// if triggered
 			var scroll_position = window.pageYOffset || document.documentElement.scrollTop;
 			var dialog_open = dialog.open || !dialog.hasAttribute("aria-hidden") || false;
@@ -398,7 +398,7 @@
 		minified = minified | true; // fallback for IE & Edge
 		// test to see if the CSS has already been added to the page & only run if not
 		var inserted = inserted | false; // test to see if this has run already
-		if ( inserted == false ) { // if it hasn't been run…
+		if ( inserted == false ) { // if it hasn't been run√â
 			{ // set up variables & data
 				var style = document.createElement('style');
 				var nl = "\r\n";
@@ -618,7 +618,7 @@
 			} // if (minified = false)
 
 			// if style tag already exists in head, pull its contents & remove
-			if ( document.querySelectorAll('style') ) { // if style tag exists…
+			if ( document.querySelectorAll('style') ) { // if style tag exists√â
 				var style_tag = document.head.querySelectorAll('style')[0];
 				dialog_css = style_tag.innerHTML + nl + nl + dialog_css;
 				style_tag.parentNode.removeChild(style_tag);
