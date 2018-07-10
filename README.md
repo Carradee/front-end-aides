@@ -2,13 +2,14 @@
 
 
 This repository includes:
-* a polyfill for the 
+* a polyfill for the HTML5 `<dialog>` tag
 **THESE ITEMS ARE IN REVISION.** I've not yet prepped the edits in a releasable way.
 * a master stylesheet
 * CSS post processor
 
 To come:
-
+* revisions to the above items
+* a JS post processor
 * a JS & CSS polyfill for the HTML5 `<dialog>` tag
 
 ## javascript-aides
@@ -16,6 +17,8 @@ Scripts from my personal JS library that I find worth sharing.
 
 ### dialogs-polyfill.js
 Use `<dialog>` tags in your HTML, give them unique ids, and link to those ids. Nothing else needed. The script edits the HTML, adds CSS classes, and injects CSS into the page head as necessary. View it on [CodePen](https://codepen.io/Carradee/full/eVGeqj).
+
+
 
 ## master-stylesheet
 **version: 0.01**
@@ -26,6 +29,8 @@ This is the reset file. Should work fine just with install—but some of the thi
 
 ### -morgoth-defaults.css
 This is the the tag default stylesheet made to go with *melkor-reset.css*. Adjust as warranted to suit your project. Includes some options.
+
+
 
 ## css-post-processors
 CSS postprocessor, written in PHP.
