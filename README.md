@@ -3,9 +3,8 @@
 
 This repository includes:
 * a polyfill for the HTML5 `<dialog>` tag
-**THESE ITEMS ARE IN REVISION.** I've not yet prepped the edits in a releasable way.
-* a master stylesheet
-* CSS post processor
+* a master stylesheet - revisions in testing
+* CSS post processor - revisions in testing
 
 To come:
 * revisions to the above items
